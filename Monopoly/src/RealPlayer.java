@@ -3,9 +3,12 @@ import java.util.Scanner;
 
 public class RealPlayer extends Player
 	{
+	public RealPlayer(String name, int i)
+		{
+			
+		}
 
 	@Override
-	
 	public ArrayList<Space> inventory()
 		{
 			ArrayList<Space> currentInventory = new ArrayList<Space>();
@@ -13,12 +16,9 @@ public class RealPlayer extends Player
 		}
 
 	@Override
-	public  String makeName()
+	public String makeName()
 		{
-			Scanner sc = new Scanner(System.in);
-			String name = sc.nextLine();
-			
-			return "Hi there " + name + "! " + "Lets play!";
+		
+			return null;
 		}
-
 	}
