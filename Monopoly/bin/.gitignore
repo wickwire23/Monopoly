@@ -1,10 +1,9 @@
-/MonopolyRunner.class
 /Board.class
-/Player.class
-/Utilities.class
-/Railroads.class
-/Properties.class
 /Cards.class
-/Spaces.class
-/Space.class
+/MonopolyRunner.class
+/Player.class
+/Properties.class
+/Railroads.class
 /RealPlayer.class
+/Space.class
+/Utilities.class

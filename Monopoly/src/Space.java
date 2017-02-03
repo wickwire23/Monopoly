@@ -3,10 +3,12 @@ public class Space
 	{
 		private String name;
 		private int location;
-		private String owner;
-		public Space(String a, int n, String owner)
+		private int price;
+		public Space(String a, int n, int i)
 		{
-			
+			name=a;
+			location=n;
+			price=i;
 		}
 		public String getName()
 			{
@@ -16,14 +18,7 @@ public class Space
 			{
 					this.name = name;
 			}
-		public String getOwner()
-			{
-					return owner;
-			}
-		public void setOwner(String owner)
-			{
-					this.owner = owner;
-			}
+	
 		public int getLocation()
 			{
 					return location;
@@ -32,4 +27,10 @@ public class Space
 			{
 					this.location = location;
 			}
+		public int getPrice() {
+			return price;
+		}
+		public void setPrice(int price) {
+			this.price = price;
+		}
 	}
