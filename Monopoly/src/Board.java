@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class Board
 	{	
+		static String[] names ={"regular","colorado 14ers"};
 		static ArrayList<Space> layout = new ArrayList<Space>();
-		public static ArrayList<Space> makeBoard()
+		public static ArrayList<Space> makeBoard1()
 		{
 			
 			layout.add(new Space("GO",0,0));
@@ -46,6 +47,52 @@ public class Board
 			layout.add(new Space("Park Place",37,350));
 			layout.add(new Space("Luxary Tax",38,100));
 			layout.add(new Space("BoardWalk",39,400));
+		
+			return layout;
+		}
+		public static ArrayList<Space> makeBoard2()
+		{
+
+			layout.add(new Space("Trailhead",0,0));
+			layout.add(new Space("Mt. Sherman",1,60));
+			layout.add(new Space("Trail Fortune",2,0));
+			layout.add(new Space("Quandary Peak",3,60));
+			layout.add(new Space("CO Fourteeners Intiative",4,0));
+			layout.add(new Space("LittleBear-Blanca 14er Traverse",5,200));
+			layout.add(new Space("Mt. Bierstadt",6,100));
+			layout.add(new Space("Go for an Adventure",7,0));
+			layout.add(new Space("Torreys Peak",8,100));
+			layout.add(new Space("Grays Peak",9,100));
+			layout.add(new Space("Basecamp / Hiking Through",10,0));
+			layout.add(new Space("Mt. Yale",11,140));
+			layout.add(new Space("Pikes Peak(14er Toll Road)",12,150));
+			layout.add(new Space("Mt. Princeton",13,140));
+			layout.add(new Space("Mt. Harvard",14,160));
+			layout.add(new Space("Crestones 14er Traverse",15,200));
+			layout.add(new Space("Humboldt Peak",16,180));
+			layout.add(new Space("Trail Fortune",17,0));
+			layout.add(new Space("Mt. Lindsey",18,180));
+			layout.add(new Space("Kit Carson Peak",19,200));
+			layout.add(new Space("Scenic Viewpoint",20,0));
+			layout.add(new Space("Mt. Sneffels",21,220));
+			layout.add(new Space("Go for an Adventure",22,0));
+			layout.add(new Space("Uncompahgre Peak",23,220));
+			layout.add(new Space("Mt. Eolus",24,220));
+			layout.add(new Space("Wilson-El Diente 14er Traverse",25,200));
+			layout.add(new Space("Mount of the Holy Cross",26,260));
+			layout.add(new Space("Mt. massive",27,260));
+			layout.add(new Space("Mt. Evans (14er Toll Road)",28,150));
+			layout.add(new Space("Mt. Elbert ",29,280));
+			layout.add(new Space("GO TO BaseCamp",30,0));
+			layout.add(new Space("Castle Peak ",31,300));
+			layout.add(new Space("Snowmass Mountain",32,300));
+			layout.add(new Space("Trail Fortune",33,0));
+			layout.add(new Space("Pyramid Peak",34,320));
+			layout.add(new Space("Maroon Bells 14er Adventure",35,200));
+			layout.add(new Space("Go for an Adventure",36,0));
+			layout.add(new Space("Longs Peak",37,350));
+			layout.add(new Space("Lost a BOOT",38,100));
+			layout.add(new Space("Capitol Peak",39,400));
 		
 			return layout;
 		}
