@@ -5,6 +5,7 @@ public class MonopolyRunner
 	{
 		static int die1;
 		static int die2;
+		static boolean backwards=false;
 		static ArrayList<Player> player = new ArrayList<Player>();
 		static ArrayList<Space> inventory = new ArrayList<Space>();
 		static boolean gameContinues=true;
@@ -48,6 +49,20 @@ public class MonopolyRunner
 		public static void rollDice()
 		{
 			// TODO Auto-generated method stub
+			if(backwards==true)
+			{
+				die1 = (int)(Math.random() *6)+1;
+				die2 = (int)(Math.random() *6)+1;
+				die1*= -1;
+				die2*= -1;
+				 if(die1+die2+player.get(0).getPosition()<0)
+				 {
+					 player.get(0).setPosition(player.get(0).getPosition()+40);
+					 
+				 }
+			}
+			else if (backwards==false)
+			{
 			 die1 = (int)(Math.random() *6)+1;
 			 die2 = (int)(Math.random() *6)+1;
 			 if(die1+die2+player.get(0).getPosition()>39)
@@ -55,6 +70,7 @@ public class MonopolyRunner
 				 player.get(0).setPosition(player.get(0).getPosition()-40);
 				 
 			 }
+			}
 		}
 		public static void movePlayer()
 		{
@@ -65,10 +81,11 @@ public class MonopolyRunner
 			if(password.equals("jailtime"))
 			{
 				System.out.println("He/She moved to " + Board.layout.get(30).getName());
-				System.out.println("Instead of going to jail... Im just going to rob you blind. Have a great day");
+				System.out.println("Instead of going to jail... Im just going to rob you blind. YOu are so blind you move backwaards");
+				backwards=true;
 				inventory.removeAll(inventory);
 				System.out.println();
-				player.get(0).setPosition(30);
+				player.get(0).setPosition(10);
 			}
 			else
 			{
@@ -80,6 +97,8 @@ public class MonopolyRunner
 			case 0:
 				System.out.println("Please collect 200 dollars.");
 				player.get(0).setMoney(player.get(0).getMoney()+200);
+				backwards=false;
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 1:
 			case 3:
@@ -122,39 +141,47 @@ public class MonopolyRunner
 				{
 					System.out.println();
 				}
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 2:
 			case 17:
 			case 33:
 				System.out.println("*Draw Card*");
 				System.out.println();
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 7:
 			case 22:
 			case 36:
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 20:
 				System.out.println("You are free");
 				System.out.println();
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 30:
-				System.out.println("Instead of going to jail... Im just going to rob you blind. Have a great day");
+				System.out.println("Instead of going to jail... Im just going to rob you blind. YOu are so blind that you move backwards");
+				backwards=true;
 				inventory.removeAll(inventory);
 				System.out.println();
+				player.get(0).setPosition(10);
 				break;
 			case 38:
 				System.out.println("Tax Time");
 				player.get(0).setMoney(player.get(0).getMoney()-100);
 				System.out.println();
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			case 4:
 				System.out.println("Tax Time");
 				player.get(0).setMoney(player.get(0).getMoney()-200);
 				System.out.println();
+				player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 				break;
 			}
 			
-			player.get(0).setPosition(die1+die2+player.get(0).getPosition());
+//			player.get(0).setPosition(die1+die2+player.get(0).getPosition());
 			}
 		}
 		public static void displayInventory()
